@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Epoxy Coatings | Premium Garage & Commercial Flooring</title>
+    <style>
+        /* --- PREMIUM BLACK & BLUE DESIGN SYSTEM --- */
+        :root {
+            --bg-dark: #070A11;        /* Deep Obsidian Stealth Black */
+            --bg-card: #111622;        /* Sleek Charcoal Midnight Black */
+            --accent-blue: #0066FF;    /* Vivid Metallic Blue */
+            --electric-glow: rgba(0, 102, 255, 0.15);
+            --text-light: #F1F5F9;     /* Crisp Off-White for High Contrast */
+            --text-muted: #94A3B8;     /* Balanced Slate Gray */
+            --border-dark: #1E293B;    /* Subtle, Elegant Border Tint */
+            --font-display: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            --radius-premium: 16px;
+            --shadow-glow: 0 12px 40px rgba(0, 102, 255, 0.25);
+            --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* --- BASE RESET & LAYOUT --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-display);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* --- NAVIGATION SYSTEM --- */
+        header {
+            background-color: rgba(7, 10, 17, 0.85);
+            -webkit-backdrop-filter: blur(24px);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-blue);
+        }
+
+        .nav-menu-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: var(--transition-smooth);
+            padding: 8px 0;
+            cursor: pointer;
+        }
+
+        nav a:hover, nav a.active-nav {
+            color: var(--text-light);
+            text-shadow: 0 0 10px rgba(0, 102, 255, 0.6);
+        }
+
+        .nav-cta {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 102, 255, 0.5);
+            background: rgba(0, 102, 255, 0.08);
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 25px rgba(0, 102, 255, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            width: 24px;
+        }
+
+        .menu-toggle span {
+            width: 100%;
+            height: 2px;
+            background-color: var(--text-light);
+            border-radius: 2px;
+        }
+
+        /* --- INTERACTIVE PAGE WRAPPER SYSTEM --- */
+        .site-page {
+            display: none;
+            animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .site-page.active-page {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- HERO HOME --- */
+        .hero-section {
+            position: relative;
+            height: 85vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-video-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.35) contrast(1.1);
+        }
+
+        .hero-dark-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(7, 10, 17, 0.9) 40%, rgba(0, 102, 255, 0.1) 100%);
+            z-index: 2;
+        }
+
+        .hero-container-fix {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .hero-content {
+            max-width: 780px;
+        }
+
+        .hero-content h1 {
+            font-size: 4.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: #94A3B8;
+            max-width: 620px;
+        }
+
+        /* --- GLOBAL CONTENT SECTIONS --- */
+        section {
+            padding: 100px 0;
+        }
+
+        .bg-alternate-section {
+            background-color: var(--bg-card);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .section-header h2 span {
+            color: var(--accent-blue);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+        }
+
+        /* --- SECTION FOOTER LINK --- */
+        .section-view-more {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .link-premium {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .link-premium span {
+            color: var(--accent-blue);
+            transition: transform 0.3s ease;
+        }
+
+        .link-premium:hover {
+            color: var(--accent-blue);
+        }
+
+        .link-premium:hover span {
+            transform: translateX(6px);
+        }
+
+        /* --- TRUST RIBBON --- */
+        .stats-ribbon {
+            background-color: #0B111E;
+            border-top: 1px solid var(--border-dark);
+            border-bottom: 1px solid var(--border-dark);
+            padding: 35px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 6px;
+        }
+
+        .stat-item h3 span {
+            color: var(--accent-blue);
+        }
+
+        .stat-item p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* --- SYSTEMS SERVICE GRID --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: var(--bg-dark);
+            border-radius: var(--radius-premium);
+            border: 1px solid var(--border-dark);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-glow);
+            border-color: rgba(0, 102, 255, 0.4);
+        }
+
+        .service-img-wrapper {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .service-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85);
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover .service-img {
+            filter: brightness(1) scale(1.04);
+        }
+
+        .service-info {
+            padding: 36px 28px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-info h3 {
+            color: var(--text-light);
+            font-size: 1.45rem;
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+
+        .service-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .service-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--accent-blue);
+            background: rgba(0, 102, 255, 0.1);
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 102, 255, 0.15);
+        }
+
+        /* --- THE DEEP WORK PROCESS SECTION --- */
+        .process-showcase {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .process-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .process-row.reverse {
+            direction: rtl;
+        }
+
+        .process-row.reverse .process-text {
+            direction: ltr;
+        }
+
+        .process-text {
+            padding: 20px;
+        }
+
+        .step-num {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            background: rgba(0, 102, 255, 0.08);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+
+        .process-text h3 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--text-light);
+        }
+
+        .process-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 24px;
+        }
+
+        .process-media {
+            height: 380px;
+            border-radius: var(--radius-premium);
+            overflow: hidden;
+            border: 1px solid var(--border-dark);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .process-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- NEW WHY CHOOSE US / FAQ ACCORDION LAYOUT --- */
+        .faq-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .faq-pitch h3 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .faq-pitch p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .perk-mini-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .perk-box {
+            background: var(--bg-dark);
+            border: 1px solid var(--border-dark);
+            padding: 24px;
+            border-radius: 12px;
+        }
+
+        .perk-box h4 {
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .perk-box p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        .accordion-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background: var(--bg-dark);
+            border: 1px solid var(--border-dark);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .faq-trigger {
+            width: 100%;
+            background: transparent;
+            border: none;
+            padding: 24px;
+            text-align: left;
+            color: var(--text-light);
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-display);
+        }
+
+        .faq-trigger span {
+            color: var(--accent-blue);
+            transition: transform 0.3s ease;
+            font-size: 1.3rem;
+        }
+
+        .faq-item.open .faq-trigger span {
+            transform: rotate(45deg);
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background: rgba(255, 255, 255, 0.01);
+        }
+
+        .faq-content p {
+            padding: 0 24px 24px 24px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- ADVANCED PROJECT ESTIMATOR FORM --- */
+        .contact-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 50px;
+            border-radius: var(--radius-premium);
+            border: 1px solid var(--border-dark);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            letter-spacing: 0.5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid var(--border-dark);
+            border-radius: 8px;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 15px rgba(0, 102, 255, 0.2);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+        }
+
+        select.form-control option {
+            background-color: var(--bg-card);
+        }
+
+        /* --- PREMIUM BUTTONS --- */
+        .btn {
+            display: inline-block;
+            padding: 18px 42px;
+            border-radius: var(--radius-premium);
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-blue);
+            color: var(--text-light);
+            box-shadow: 0 8px 25px rgba(0, 102, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #1a75ff;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 102, 255, 0.5);
+        }
+
+        .btn-full-width {
+            width: 100%;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #03050a;
+            color: #475569;
+            padding: 60px 0;
+            border-top: 1px solid var(--border-dark);
+            text-align: center;
+        }
+
+        footer strong {
+            color: var(--text-light);
+        }
+
+        /* --- RESPONSIVE REFINEMENTS --- */
+        @media (max-width: 992px) {
+            .process-row, .process-row.reverse {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                direction: ltr;
+            }
+            .process-row.reverse .process-text {
+                direction: ltr;
+            }
+            .process-media {
+                height: 300px;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+            .faq-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.8rem; }
+            .section-header h2 { font-size: 2.2rem; }
+            .menu-toggle { display: flex; }
+            .contact-box { padding: 32px 20px; }
+
+            .nav-menu-wrapper {
+                position: absolute;
+                top: 79px;
+                left: 0;
+                width: 100%;
+                background-color: #070A11;
+                border-bottom: 1px solid var(--border-dark);
+                flex-direction: column;
+                gap: 24px;
+                padding: 32px;
+                transform: translateY(-15px);
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transition: var(--transition-smooth);
+            }
+
+            .nav-menu-wrapper.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a onclick="switchPage('home')" class="logo" style="cursor: pointer;">Alpha <span>Epoxy</span></a>
+            
+            <button class="menu-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu-wrapper" id="nav-menu">
+                <nav>
+                    <ul>
+                        <li><a onclick="switchPage('home')" id="nav-home" class="active-nav">Home</a></li>
+                        <li><a onclick="switchPage('systems')" id="nav-systems">Systems</a></li>
+                        <li><a onclick="switchPage('process')" id="nav-process">Our Process</a></li>
+                        <li><a onclick="switchPage('why-us')" id="nav-why-us">Why Choose Us</a></li>
+                    </ul>
+                </nav>
+                <a onclick="switchPage('contact')" class="nav-cta">Get Free Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <div id="page-home" class="site-page active-page">
+        <section id="hero-home" class="hero-section" style="padding:0;">
+    <div class="hero-video-wrapper">
+        <video autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=1920&q=80">
+            <source src="https://player.vimeo.com/external/371433846.hd.mp4?s=b416959325fbe3198894df9f0a2d216d6342dd3b&profile_id=172&oauth2_token_id=57447761" type="video/mp4">
+        </video>
+    </div>
+    <div class="hero-dark-overlay"></div>
+    <div class="hero-container-fix">
+        <div class="hero-content">
+            <h1>Premium Epoxy Floors <br>Built To Last.</h1>
+            <p>Professional, heavy-duty concrete coatings for residential garages, basements, and commercial assets. Locally owned and dedicated to seamless finishes.</p>
+            <div>
+                <a onclick="switchPage('contact')" class="btn btn-primary">Schedule Your Free Quote</a>
+            </div>
+        </div>
+    </div>
+</section>
+        <div class="stats-ribbon">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <h3>Free <span>Estimates</span></h3>
+                    <p>No-Obligation Metrics</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100<span>%</span> Insured</h3>
+                    <p>Fully Certified Protection</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Premium <span>Resins</span></h3>
+                    <p>Industrial Formulations</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Locally <span>Owned</span></h3>
+                    <p>Elite Craftsmanship</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="bg-alternate-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Engineered Coating <span>Systems</span></h2>
+                    <p>High-durability configurations designed to deliver structural protection and flawless aesthetics.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-img-wrapper"><img src="images/epooxy_1.jpg" alt="Flake Garage Floor" class="service-img"></div>
+                        <div class="service-info">
+                            <h3>Decorative Full-Flake Garage Floors</h3>
+                            <p>Our most popular option for residential spaces. Provides a highly textured finish that completely masks layout irregularities.</p>
+                            <div class="service-tags"><span class="tag">Anti-Slip Texture</span></div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img-wrapper"><img src="images/epooxy_2.jpg" alt="Metallic Floor" class="service-img"></div>
+                        <div class="service-info">
+                            <h3>High-Gloss Metallic Coatings</h3>
+                            <p>Perfect for custom basements and upscale spaces. Uses vibrant pigments to engineer an organic flowing marble appearance.</p>
+                            <div class="service-tags"><span class="tag">Seamless Gloss</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-view-more">
+                    <a onclick="switchPage('systems')" class="link-premium">Explore All Systems <span>&rarr;</span></a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Advanced Preparation <span>Blueprint</span></h2>
+                    <p>Adhesion relies on mechanical profiles. We diamond-grind every surface to establish absolute structural integrity.</p>
+                </div>
+                <div class="process-showcase" style="margin-top: 0;">
+                    <div class="process-row">
+                        <div class="process-text">
+                            <span class="step-num">Phase 01</span>
+                            <h3>Planetary Diamond Grinding</h3>
+                            <p>We deploy heavy-duty planetary diamond tools to cut through old sealers, open up substrate pores, and ensure perfect molecular bonding conditions.</p>
+                        </div>
+                        <div class="process-media">
+                            <img src="images/grinder.jpg" alt="Diamond grinding prep mechanics">
+                        </div>
+                    </div>
+                </div>
+                <div class="section-view-more">
+                    <a onclick="switchPage('process')" class="link-premium">See Our Full 4-Step Process <span>&rarr;</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-alternate-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Homeowners <span>Trust Alpha</span></h2>
+                    <p>The difference between an amateur store kit and a professional long-term asset application.</p>
+                </div>
+                <div class="faq-layout">
+                    <div class="faq-pitch" style="grid-column: 1 / -1;">
+                        <div class="perk-mini-grid">
+                            <div class="perk-box">
+                                <h4>Hot-Tire Proof</h4>
+                                <p>DIY kits delaminate under hot tires. Our cross-linked polymers bond permanently to prevent peeling.</p>
+                            </div>
+                            <div class="perk-box">
+                                <h4>Fluid Shield</h4>
+                                <p>Engine oils, brake fluids, and road salt wipe up effortlessly with zero staining.</p>
+                            </div>
+                            <div class="perk-box">
+                                <h4>Impact Armour</h4>
+                                <p>Thick multi-layer resin composition acts as a structural shock absorber for dropped heavy steel tools.</p>
+                            </div>
+                            <div class="perk-box">
+                                <h4>Rapid Return</h4>
+                                <p>Walk on your floor within a few hours; return your heavy vehicles to service in just 24–48 hours max.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-view-more">
+                    <a onclick="switchPage('why-us')" class="link-premium">View System FAQs & Perks <span>&rarr;</span></a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="page-systems" class="site-page">
+        <section class="bg-alternate-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Premium Flooring <span>Systems</span></h2>
+                    <p>We install professional-grade, multi-layer protective surfaces designed to withstand heavy vehicles, specialized tools, oil spills, and high impacts.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-img-wrapper">
+                            <img src="images/epooxy_1.jpg" alt="Decorative Full Flake Garage Floor System" class="service-img">
+                        </div>
+                        <div class="service-info">
+                            <div>
+                                <h3>Decorative Full-Flake Garage Floors</h3>
+                                <p>Our most popular option for residential spaces. Provides a highly textured, granite-like broadcast finish that completely masks layout irregularities and guards against hot-tire peeling.</p>
+                            </div>
+                            <div class="service-tags">
+                                <span class="tag">Anti-Slip Texture</span>
+                                <span class="tag">Easy to Clean</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-img-wrapper">
+                            <img src="images/epooxy_2.jpg" alt="High-Gloss Metallic Epoxy Finish" class="service-img">
+                        </div>
+                        <div class="service-info">
+                            <div>
+                                <h3>High-Gloss Metallic Coatings</h3>
+                                <p>Perfect for custom basements, commercial showrooms, and upscale offices. Uses vibrant metallic pigments to engineer an organic flowing marble appearance with an ultra-reflective mirror sheen.</p>
+                            </div>
+                            <div class="service-tags">
+                                <span class="tag">Seamless Gloss</span>
+                                <span class="tag">Custom Metallics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-img-wrapper">
+                            <img src="images/epooxy_3.jpg" alt="UV-Stable Polyaspartic Protective Topcoat" class="service-img">
+                        </div>
+                        <div class="service-info">
+                            <div>
+                                <h3>UV-Stable Protective Topcoats</h3>
+                                <p>An elite polyaspartic glaze application engineered to isolate base colors. It delivers comprehensive scratch and fluid resistance, and won't fade or yellow under direct sunlight exposure.</p>
+                            </div>
+                            <div class="service-tags">
+                                <span class="tag">Sunlight Protected</span>
+                                <span class="tag">Scratch Armor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="page-process" class="site-page">
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Industrial Preparation <span>Method</span></h2>
+                    <p>Adhesion is determined entirely by substrate profile. We do not use weak acid-etch kits—we execute diamond preparation steps to open concrete pores correctly.</p>
+                </div>
+
+                <div class="process-showcase">
+                    <div class="process-row">
+                        <div class="process-text">
+                            <span class="step-num">Phase 01</span>
+                            <h3>Planetary Diamond Grinding</h3>
+                            <p>We deploy dual-rotation heavy diamond grinders equipped with vacuum extractors to remove surface laitance, oil spots, and aged sealer finishes, establishing a perfect mechanical profile tint.</p>
+                        </div>
+                        <div class="process-media">
+                            <img src="images/grinder.jpg" alt="Diamond grinding prep mechanics">
+                        </div>
+                    </div>
+
+                    <div class="process-row reverse">
+                        <div class="process-text">
+                            <span class="step-num">Phase 02</span>
+                            <h3>Slab Leveling & Solid Priming</h3>
+                            <p>Structural crack segments and surface spalls are vacuum cleared and injected with polyurea compound. Next, we roll down a deep-penetrating 100% solid industrial base matrix resin.</p>
+                        </div>
+                        <div class="process-media">
+                            <img src="images/epooxy_1.jpg" alt="Base coat deployment process">
+                        </div>
+                    </div>
+
+                    <div class="process-row">
+                        <div class="process-text">
+                            <span class="step-num">Phase 03</span>
+                            <h3>Full-Rejection Flake Injection</h3>
+                            <p>While our premium base coating is structurally active, we manually throw hundreds of pounds of durable vinyl matrix flake chips, fully saturating the area to target absolute rejection depth.</p>
+                        </div>
+                        <div class="process-media">
+                            <img src="images/epooxy_2.jpg" alt="Flake saturation phase">
+                        </div>
+                    </div>
+
+                    <div class="process-row reverse">
+                        <div class="process-text">
+                            <span class="step-num">Phase 04</span>
+                            <h3>Polyaspartic Clear Lock</h3>
+                            <p>After scraping away excess media, we apply our clear protective coat armor layer, sealing your custom flooring texture for quick vehicle return capabilities within 24 hours.</p>
+                        </div>
+                        <div class="process-media">
+                            <img src="images/epooxy_3.jpg" alt="Polyaspartic finish coating layer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="page-why-us" class="site-page">
+        <section class="bg-alternate-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Built For <span>Performance</span></h2>
+                    <p>Learn exactly what sets our commercial-grade applications apart from standard DIY store-bought kits.</p>
+                </div>
+
+                <div class="faq-layout">
+                    <div class="faq-pitch">
+                        <h3>Industrial Performance. Home Comfort.</h3>
+                        <p>We don't cut corners. Our flooring configurations rely heavily on scientific industrial adhesion, chemical-resistant polymers, and flawless field preparation mechanics to handle maximum punishment.</p>
+                        
+                        <div class="perk-mini-grid">
+                            <div class="perk-box">
+                                <h4>Hot-Tire Proof</h4>
+                                <p>DIY kits delaminate under hot tires. Our cross-linked polymers bond permanently to prevent peeling.</p>
+                            </div>
+                            <div class="perk-box">
+                                <h4>Fluid Shield</h4>
+                                <p>Engine oils, brake fluids, chemical solvent drops, and road salt wipe up effortlessly with zero staining.</p>
+                            </div>
+                            <div class="perk-box">
+                                <h4>Impact Armour</h4>
+                                <p>Thick multi-layer resin composition acts as a structural shock absorber for dropped heavy steel tools.</p>
+                            </div>
+                            <div class="perk-box">
+                                <h4>Rapid Return</h4>
+                                <p>Walk on your floor within a few hours; return your heavy vehicles to service in just 24–48 hours max.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-wrapper">
+                        <div class="faq-item">
+                            <button class="faq-trigger" onclick="toggleFaq(this)">How long does the installation take? <span>+</span></button>
+                            <div class="faq-content">
+                                <p>Most typical 2-to-3 car residential garages are completely prepared, repaired, coated, and sealed within 1 to 2 consecutive days, depending entirely on necessary layout repairs.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-trigger" onclick="toggleFaq(this)">Are these surfaces slippery when wet? <span>+</span></button>
+                            <div class="faq-content">
+                                <p>Our full-flake broadcasting systems inherently possess a highly structured, slip-resistant surface profile texture. For high-gloss or metallic options, we can add specialized micro-media aggregate agents to boost grip security.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-trigger" onclick="toggleFaq(this)">Why is diamond grinding better than acid etching? <span>+</span></button>
+                            <div class="faq-content">
+                                <p>Acid washing only cleans superficial layers without curing surface laitance. Mechanical diamond grinding slices cleanly through deep layers, expanding structural concrete pores to yield a secure mechanical profile for deep resin lock-in.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-trigger" onclick="toggleFaq(this)">How long do I need to wait to park my vehicle? <span>+</span></button>
+                            <div class="faq-content">
+                                <p>You are free to walk safely across the floor surface within 8–12 hours. We strongly recommend waiting 24 to 48 hours before pulling heavy vehicles or industrial equipment onto our advanced topcoat layers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="page-contact" class="site-page">
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Request Your Commercial <span>Pricing</span></h2>
+                    <p>Complete our preliminary project details below, and an expert will coordinate a site overview verification to deliver a firm custom estimate proposal.</p>
+                </div>
+
+                <div class="contact-box">
+                    <form action="#" method="POST" onsubmit="alert('Quote successfully compiled and transferred.'); return false;">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required placeholder="(555) 000-0000">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-type">Target Structural Application</label>
+                            <select id="project-type" name="project-type" class="form-control">
+                                <option>Decorative Full-Flake Garage Flooring</option>
+                                <option>High-Gloss Flowing Metallic Custom Finishes</option>
+                                <option>UV-Stable Polyaspartic Chemical Shield Coating</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Approximate Dimensions & Surface Conditions (Optional)</label>
+                            <textarea id="message" name="message" class="form-control" rows="4" placeholder="Detail parameters like square footage, structural crack counts, etc..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full-width">Send Quote Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 <strong>Alpha Epoxy Coatings</strong>. All Rights Reserved. Engineered for Ultimate Adhesion Performance.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- MULTI-PAGE SPA ROUTING MODULE ---
+        function switchPage(pageId) {
+            // Hide all pages smoothly
+            document.querySelectorAll('.site-page').forEach(page => {
+                page.classList.remove('active-page');
+            });
+            // Show requested page view
+            const targetPage = document.getElementById(`page-${pageId}`);
+            if(targetPage) {
+                targetPage.classList.add('active-page');
+            }
+
+            // Update active navigation markers
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active-nav');
+            });
+            const activeLink = document.getElementById(`nav-${pageId}`);
+            if(activeLink) {
+                activeLink.classList.add('active-nav');
+            }
+
+            // Snap view window context back up to clean start position
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+
+        // --- MOBILE MENU FUNCTIONALITY ---
+        const toggleBtn = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // --- INTERACTIVE FAQ TOGGLE SYSTEM ---
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const content = button.nextElementSibling;
+            
+            // Check if it's already open
+            const isOpen = item.classList.contains('open');
+            
+            // Close all items first for accordion effect
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('open');
+                i.querySelector('.faq-content').style.maxHeight = null;
+            });
+            
+            // If it wasn't open, open it now
+            if (!isOpen) {
+                item.classList.add('open');
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+    </script>
+</body>
+</html>
