@@ -1070,42 +1070,97 @@
         </section>
     </div>
 
-    <div id="page-contact" class="site-page">
-        <section>
-            <div class="container">
-                <div class="section-header">
-                    <h2>Request Your Commercial <span>Pricing</span></h2>
-                    <p>Complete our preliminary project details below, and an expert will coordinate a site overview verification to deliver a firm custom estimate proposal.</p>
-                </div>
+   <!-- Request Your Commercial Pricing Section -->
+<section style="
+    background-color: #0a0f19;
+    border: 1px solid rgba(0, 112, 243, 0.2);
+    border-radius: 12px;
+    padding: 4rem 1.5rem;
+    margin-top: 3rem;
+">
+    <div class="container" style="max-width: 650px; margin: 0 auto;">
+        
+        <!-- Section Header -->
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+            <h2 style="color: #ffffff; font-size: 2rem; margin-bottom: 0.8rem;">
+                Request Your <span style="color: #0070f3;">Commercial Pricing</span>
+            </h2>
+            <p style="color: #bbb; font-size: 1rem; line-height: 1.6;">
+                Fill out your project details below to receive a custom estimate proposal.
+            </p>
+        </div>
 
-                <div class="contact-box">
-                    <form action="#" method="POST" onsubmit="alert('Quote successfully compiled and transferred.'); return false;">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" class="form-control" required placeholder="John Doe">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" required placeholder="(555) 000-0000">
-                        </div>
-                        <div class="form-group">
-                            <label for="project-type">Target Structural Application</label>
-                            <select id="project-type" name="project-type" class="form-control">
-                                <option>Decorative Full-Flake Garage Flooring</option>
-                                <option>High-Gloss Flowing Metallic Custom Finishes</option>
-                                <option>UV-Stable Polyaspartic Chemical Shield Coating</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Approximate Dimensions & Surface Conditions (Optional)</label>
-                            <textarea id="message" name="message" class="form-control" rows="4" placeholder="Detail parameters like square footage, structural crack counts, etc..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full-width">Send Quote Request</button>
-                    </form>
-                </div>
+        <!-- Quote Form -->
+        <form style="display: flex; flex-direction: column; gap: 1.25rem;" onsubmit="event.preventDefault();">
+            
+            <!-- Name Input -->
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <label style="color: #e0e0e0; font-size: 0.9rem; font-weight: 600;">Your Name</label>
+                <input type="text" placeholder="John Doe" required style="
+                    width: 100%;
+                    padding: 0.85rem 1rem;
+                    background: rgba(255, 255, 255, 0.04);
+                    border: 1px solid rgba(255, 255, 255, 0.15);
+                    border-radius: 6px;
+                    color: #ffffff;
+                    font-size: 1rem;
+                    outline: none;
+                ">
             </div>
-        </section>
+
+            <!-- Phone Input -->
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <label style="color: #e0e0e0; font-size: 0.9rem; font-weight: 600;">Phone Number</label>
+                <input type="tel" placeholder="(555) 000-0000" required style="
+                    width: 100%;
+                    padding: 0.85rem 1rem;
+                    background: rgba(255, 255, 255, 0.04);
+                    border: 1px solid rgba(255, 255, 255, 0.15);
+                    border-radius: 6px;
+                    color: #ffffff;
+                    font-size: 1rem;
+                    outline: none;
+                ">
+            </div>
+
+            <!-- Project Details Input -->
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <label style="color: #e0e0e0; font-size: 0.9rem; font-weight: 600;">
+                    Project Scope & Requirements <span style="color: #888; font-weight: 400;">(Optional)</span>
+                </label>
+                <textarea rows="3" placeholder="Briefly describe your space, approximate square footage, or specific needs (e.g. 2-car garage, flake finish)..." style="
+                    width: 100%;
+                    padding: 0.85rem 1rem;
+                    background: rgba(255, 255, 255, 0.04);
+                    border: 1px solid rgba(255, 255, 255, 0.15);
+                    border-radius: 6px;
+                    color: #ffffff;
+                    font-size: 1rem;
+                    outline: none;
+                    resize: vertical;
+                "></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary" style="
+                width: 100%;
+                padding: 1rem;
+                background-color: #0070f3;
+                color: #ffffff;
+                border: none;
+                border-radius: 6px;
+                font-size: 1.05rem;
+                font-weight: 600;
+                cursor: pointer;
+                margin-top: 0.5rem;
+                transition: background-color 0.2s ease;
+            ">
+                Send Quote Request &rarr;
+            </button>
+
+        </form>
     </div>
+</section>
 
     <footer>
         <div class="container">
