@@ -163,71 +163,92 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- HERO HOME --- */
-        .hero-section {
-            position: relative;
-            height: 85vh;
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
+       /* ---------- HERO SECTION ---------- */
 
-        .hero-video-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-        }
+.hero-section{
+    position:relative;
+    height:100vh;
+    min-height:750px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    background:#070A11;
+}
 
-        .hero-video-wrapper video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.35) contrast(1.1);
-        }
+.hero-video-wrapper,
+.hero-image-wrapper{
+    position:absolute;
+    inset:0;
+    z-index:1;
+}
 
-        .hero-dark-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(7, 10, 17, 0.9) 40%, rgba(0, 102, 255, 0.1) 100%);
-            z-index: 2;
-        }
+.hero-video-wrapper video,
+.hero-image-wrapper img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:right center;
+}
 
-        .hero-container-fix {
-            position: relative;
-            z-index: 3;
-            width: 100%;
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
+/* Better overlay */
 
-        .hero-content {
-            max-width: 780px;
-        }
+.hero-dark-overlay{
+    position:absolute;
+    inset:0;
+    z-index:2;
 
-        .hero-content h1 {
-            font-size: 4.2rem;
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 24px;
-            letter-spacing: -1.5px;
-        }
+    background:linear-gradient(
+        90deg,
+        rgba(7,10,17,.88) 0%,
+        rgba(7,10,17,.72) 35%,
+        rgba(7,10,17,.25) 65%,
+        rgba(7,10,17,0) 100%
+    );
+}
 
-        .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            color: #94A3B8;
-            max-width: 620px;
-        }
+.hero-container-fix{
+    position:relative;
+    z-index:3;
+    width:100%;
+    max-width:1240px;
+    margin:auto;
+    padding:0 40px;
+}
 
+.hero-content{
+    max-width:520px;
+}
+
+.hero-content h1{
+    font-size:3.8rem;
+    line-height:1.05;
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+.hero-content p{
+    font-size:1.15rem;
+    color:#b2bcc9;
+    margin-bottom:40px;
+    line-height:1.8;
+}
+
+@media(max-width:768px){
+
+.hero-section{
+    height:auto;
+    min-height:650px;
+}
+
+.hero-content h1{
+    font-size:2.8rem;
+}
+
+.hero-content{
+    max-width:100%;
+}
+
+}
         /* --- GLOBAL CONTENT SECTIONS --- */
         section {
             padding: 100px 0;
@@ -755,22 +776,39 @@
     </header>
 
     <div id="page-home" class="site-page active-page">
-        <section id="hero-home" class="hero-section" style="padding:0;">
-    <div class="hero-video-wrapper">
-        <video autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=1920&q=80">
-            <source src="https://player.vimeo.com/external/371433846.hd.mp4?s=b416959325fbe3198894df9f0a2d216d6342dd3b&profile_id=172&oauth2_token_id=57447761" type="video/mp4">
-        </video>
+        <section id="hero-home" class="hero-section">
+
+    <div class="hero-image-wrapper">
+        <img src="images/epoxy_header.jpg" alt="Alpha Epoxy Coatings">
     </div>
+
     <div class="hero-dark-overlay"></div>
+
     <div class="hero-container-fix">
+
         <div class="hero-content">
-            <h1>Premium Epoxy Floors <br>Built To Last.</h1>
-            <p>Professional, heavy-duty concrete coatings for residential garages, basements, and commercial assets. Locally owned and dedicated to seamless finishes.</p>
-            <div>
-                <a onclick="switchPage('contact')" class="btn btn-primary">Schedule Your Free Quote</a>
-            </div>
+
+            <h1>
+                Premium Epoxy Floors
+                <br>
+                Built To Last.
+            </h1>
+
+            <p>
+                Professional heavy-duty epoxy flooring for garages,
+                basements and commercial spaces. Beautiful finishes
+                engineered for strength, durability and long-term
+                performance.
+            </p>
+
+            <a onclick="switchPage('contact')" class="btn btn-primary">
+                Schedule Your Free Quote
+            </a>
+
         </div>
+
     </div>
+
 </section>
         <div class="stats-ribbon">
             <div class="container stats-grid">
@@ -793,92 +831,58 @@
             </div>
         </div>
 
-        <section class="bg-alternate-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Engineered Coating <span>Systems</span></h2>
-                    <p>High-durability configurations designed to deliver structural protection and flawless aesthetics.</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-img-wrapper"><img src="images/epooxy_1.jpg" alt="Flake Garage Floor" class="service-img"></div>
-                        <div class="service-info">
-                            <h3>Decorative Full-Flake Garage Floors</h3>
-                            <p>Our most popular option for residential spaces. Provides a highly textured finish that completely masks layout irregularities.</p>
-                            <div class="service-tags"><span class="tag">Anti-Slip Texture</span></div>
-                        </div>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-img-wrapper"><img src="images/epooxy_2.jpg" alt="Metallic Floor" class="service-img"></div>
-                        <div class="service-info">
-                            <h3>High-Gloss Metallic Coatings</h3>
-                            <p>Perfect for custom basements and upscale spaces. Uses vibrant pigments to engineer an organic flowing marble appearance.</p>
-                            <div class="service-tags"><span class="tag">Seamless Gloss</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-view-more">
-                    <a onclick="switchPage('systems')" class="link-premium">Explore All Systems <span>&rarr;</span></a>
-                </div>
+       <!-- Section 1: Premium Flooring Systems -->
+<section class="bg-alternate-section" style="
+    background: linear-gradient(rgba(10, 15, 25, 0.40), rgba(10, 15, 25, 0.40)), 
+                url('images/background1.jpg') center/cover no-repeat;
+    padding: 6rem 1rem;
+">
+    <div class="container">
+        <div class="section-header" style="text-align: center; max-width: 750px; margin: 0 auto;">
+            <h2 style="color: #ffffff; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">Our Premium Flooring <span>Systems</span></h2>
+            <p style="color: #ffffff; text-shadow: 0 2px 6px rgba(0,0,0,0.8); font-weight: 500;">We install premium epoxy flooring systems for garages, basements, commercial spaces, and showrooms—built for exceptional durability and a flawless finish.</p>
+            <div class="section-view-more" style="margin-top: 2rem;">
+                <a onclick="switchPage('systems')" class="link-premium">Explore All Systems <span>&rarr;</span></a>
             </div>
-        </section>
-        <section>
-            <div class="container">
-                <div class="section-header">
-                    <h2>Our Advanced Preparation <span>Blueprint</span></h2>
-                    <p>Adhesion relies on mechanical profiles. We diamond-grind every surface to establish absolute structural integrity.</p>
-                </div>
-                <div class="process-showcase" style="margin-top: 0;">
-                    <div class="process-row">
-                        <div class="process-text">
-                            <span class="step-num">Phase 01</span>
-                            <h3>Planetary Diamond Grinding</h3>
-                            <p>We deploy heavy-duty planetary diamond tools to cut through old sealers, open up substrate pores, and ensure perfect molecular bonding conditions.</p>
-                        </div>
-                        <div class="process-media">
-                            <img src="images/grinder.jpg" alt="Diamond grinding prep mechanics">
-                        </div>
-                    </div>
-                </div>
-                <div class="section-view-more">
-                    <a onclick="switchPage('process')" class="link-premium">See Our Full 4-Step Process <span>&rarr;</span></a>
-                </div>
-            </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <section class="bg-alternate-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Why Homeowners <span>Trust Alpha</span></h2>
-                    <p>The difference between an amateur store kit and a professional long-term asset application.</p>
-                </div>
-                <div class="faq-layout">
-                    <div class="faq-pitch" style="grid-column: 1 / -1;">
-                        <div class="perk-mini-grid">
-                            <div class="perk-box">
-                                <h4>Hot-Tire Proof</h4>
-                                <p>DIY kits delaminate under hot tires. Our cross-linked polymers bond permanently to prevent peeling.</p>
-                            </div>
-                            <div class="perk-box">
-                                <h4>Fluid Shield</h4>
-                                <p>Engine oils, brake fluids, and road salt wipe up effortlessly with zero staining.</p>
-                            </div>
-                            <div class="perk-box">
-                                <h4>Impact Armour</h4>
-                                <p>Thick multi-layer resin composition acts as a structural shock absorber for dropped heavy steel tools.</p>
-                            </div>
-                            <div class="perk-box">
-                                <h4>Rapid Return</h4>
-                                <p>Walk on your floor within a few hours; return your heavy vehicles to service in just 24–48 hours max.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-view-more">
-                    <a onclick="switchPage('why-us')" class="link-premium">View System FAQs & Perks <span>&rarr;</span></a>
-                </div>
+<!-- Section 2: Preparation Blueprint -->
+<section style="
+    background: linear-gradient(rgba(10, 15, 25, 0.40), rgba(10, 15, 25, 0.40)), 
+                url('images/background2.jpg') center/cover no-repeat;
+    padding: 6rem 1rem;
+    margin-top: 3rem;
+">
+    <div class="container">
+        <div class="section-header" style="text-align: center; max-width: 750px; margin: 0 auto;">
+            <h2 style="color: #ffffff; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">Our Advanced <span>Preparation Blueprint</span></h2>
+            <p style="color: #ffffff; text-shadow: 0 2px 6px rgba(0,0,0,0.8); font-weight: 500;">Adhesion relies on mechanical profiles. We diamond-grind every surface to establish absolute structural integrity.</p>
+            <div class="section-view-more" style="margin-top: 2rem;">
+                <a onclick="switchPage('process')" class="link-premium">See Our Full 4-Step Process <span>&rarr;</span></a>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
+      <!-- Section 3: Why Homeowners Trust Alpha -->
+<section style="
+    background-color: #0a0f19;
+    border: 1px solid rgba(0, 112, 243, 0.2);
+    border-radius: 12px;
+    padding: 6rem 1rem;
+    margin-top: 3rem;
+">
+    <div class="container">
+        <div class="section-header" style="text-align: center; max-width: 750px; margin: 0 auto;">
+            <h2 style="color: #ffffff;">Why Homeowners <span style="color: #0070f3;">Trust Alpha</span></h2>
+            <p style="color: #e0e0e0; font-size: 1.1rem; line-height: 1.6;">The difference between an amateur store kit and a professional long-term asset application.</p>
+            <div class="section-view-more" style="margin-top: 2rem;">
+                <a onclick="switchPage('why-us')" class="link-premium">View System FAQs & Perks <span>&rarr;</span></a>
+            </div>
+        </div>
+    </div>
+</section>
     </div>
 
     <div id="page-systems" class="site-page">
@@ -892,7 +896,7 @@
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-img-wrapper">
-                            <img src="images/epooxy_1.jpg" alt="Decorative Full Flake Garage Floor System" class="service-img">
+                            <img src="images/garage.jpg" alt="Decorative Full Flake Garage Floor System" class="service-img">
                         </div>
                         <div class="service-info">
                             <div>
@@ -908,7 +912,7 @@
 
                     <div class="service-card">
                         <div class="service-img-wrapper">
-                            <img src="images/epooxy_2.jpg" alt="High-Gloss Metallic Epoxy Finish" class="service-img">
+                            <img src="images/gloss.jpg" alt="High-Gloss Metallic Epoxy Finish" class="service-img">
                         </div>
                         <div class="service-info">
                             <div>
@@ -924,7 +928,7 @@
 
                     <div class="service-card">
                         <div class="service-img-wrapper">
-                            <img src="images/epooxy_3.jpg" alt="UV-Stable Polyaspartic Protective Topcoat" class="service-img">
+                            <img src="images/uv.jpg" alt="UV-Stable Polyaspartic Protective Topcoat" class="service-img">
                         </div>
                         <div class="service-info">
                             <div>
@@ -958,7 +962,7 @@
                             <p>We deploy dual-rotation heavy diamond grinders equipped with vacuum extractors to remove surface laitance, oil spots, and aged sealer finishes, establishing a perfect mechanical profile tint.</p>
                         </div>
                         <div class="process-media">
-                            <img src="images/grinder.jpg" alt="Diamond grinding prep mechanics">
+                            <img src="images/step1.jpg" alt="Diamond grinding prep mechanics">
                         </div>
                     </div>
 
@@ -969,7 +973,7 @@
                             <p>Structural crack segments and surface spalls are vacuum cleared and injected with polyurea compound. Next, we roll down a deep-penetrating 100% solid industrial base matrix resin.</p>
                         </div>
                         <div class="process-media">
-                            <img src="images/epooxy_1.jpg" alt="Base coat deployment process">
+                            <img src="images/step2.jpg" alt="Base coat deployment process">
                         </div>
                     </div>
 
@@ -980,7 +984,7 @@
                             <p>While our premium base coating is structurally active, we manually throw hundreds of pounds of durable vinyl matrix flake chips, fully saturating the area to target absolute rejection depth.</p>
                         </div>
                         <div class="process-media">
-                            <img src="images/epooxy_2.jpg" alt="Flake saturation phase">
+                            <img src="images/step3.jpg" alt="Flake saturation phase">
                         </div>
                     </div>
 
@@ -991,7 +995,7 @@
                             <p>After scraping away excess media, we apply our clear protective coat armor layer, sealing your custom flooring texture for quick vehicle return capabilities within 24 hours.</p>
                         </div>
                         <div class="process-media">
-                            <img src="images/epooxy_3.jpg" alt="Polyaspartic finish coating layer">
+                            <img src="images/step4.jpg" alt="Polyaspartic finish coating layer">
                         </div>
                     </div>
                 </div>
@@ -1105,7 +1109,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 <strong>Alpha Epoxy Coatings</strong>. All Rights Reserved. Engineered for Ultimate Adhesion Performance.</p>
+            <p>&copy; 2026 <strong>Alpha Epoxy Coatings</strong>. All Rights Reserved.</p>
         </div>
     </footer>
 
