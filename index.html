@@ -1072,88 +1072,98 @@
 
    <!-- Request Your Commercial Pricing Section -->
 <section style="
-    background-color: #0a0f19;
-    border: 1px solid rgba(0, 112, 243, 0.2);
+    background: linear-gradient(180deg, #0f172a 0%, #0a0f19 100%);
+    border: 1px solid rgba(0, 112, 243, 0.3);
+    border-top: 3px solid #0070f3;
     border-radius: 12px;
     padding: 4rem 1.5rem;
-    margin-top: 3rem;
+    margin-top: 3.5rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 112, 243, 0.15);
 ">
-    <div class="container" style="max-width: 650px; margin: 0 auto;">
+    <div class="container" style="max-width: 600px; margin: 0 auto;">
         
         <!-- Section Header -->
         <div style="text-align: center; margin-bottom: 2.5rem;">
-            <h2 style="color: #ffffff; font-size: 2rem; margin-bottom: 0.8rem;">
-                Request Your <span style="color: #0070f3;">Commercial Pricing</span>
+            <h2 style="color: #ffffff; font-size: 2.1rem; font-weight: 700; margin-bottom: 0.8rem; tracking: -0.02em;">
+                Request Your <span style="color: #0070f3; background: linear-gradient(90deg, #0070f3, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Commercial Pricing</span>
             </h2>
-            <p style="color: #bbb; font-size: 1rem; line-height: 1.6;">
-                Fill out your project details below to receive a custom estimate proposal.
+            <p style="color: #a1a1aa; font-size: 1.025rem; line-height: 1.6; font-weight: 400;">
+                Fill out your details below to receive a custom estimate proposal tailored to your space.
             </p>
         </div>
 
         <!-- Quote Form -->
-        <form style="display: flex; flex-direction: column; gap: 1.25rem;" onsubmit="event.preventDefault();">
+        <form style="display: flex; flex-direction: column; gap: 1.35rem;" onsubmit="event.preventDefault();">
             
             <!-- Name Input -->
             <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                <label style="color: #e0e0e0; font-size: 0.9rem; font-weight: 600;">Your Name</label>
+                <label style="color: #f4f4f5; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.02em;">Your Name</label>
                 <input type="text" placeholder="John Doe" required style="
                     width: 100%;
-                    padding: 0.85rem 1rem;
-                    background: rgba(255, 255, 255, 0.04);
-                    border: 1px solid rgba(255, 255, 255, 0.15);
-                    border-radius: 6px;
+                    padding: 0.9rem 1.1rem;
+                    background: rgba(15, 23, 42, 0.6);
+                    border: 1px solid rgba(255, 255, 255, 0.12);
+                    border-radius: 8px;
                     color: #ffffff;
-                    font-size: 1rem;
+                    font-size: 0.975rem;
                     outline: none;
+                    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+                    transition: border-color 0.2s, box-shadow 0.2s;
                 ">
             </div>
 
             <!-- Phone Input -->
             <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                <label style="color: #e0e0e0; font-size: 0.9rem; font-weight: 600;">Phone Number</label>
+                <label style="color: #f4f4f5; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.02em;">Phone Number</label>
                 <input type="tel" placeholder="(555) 000-0000" required style="
                     width: 100%;
-                    padding: 0.85rem 1rem;
-                    background: rgba(255, 255, 255, 0.04);
-                    border: 1px solid rgba(255, 255, 255, 0.15);
-                    border-radius: 6px;
+                    padding: 0.9rem 1.1rem;
+                    background: rgba(15, 23, 42, 0.6);
+                    border: 1px solid rgba(255, 255, 255, 0.12);
+                    border-radius: 8px;
                     color: #ffffff;
-                    font-size: 1rem;
+                    font-size: 0.975rem;
                     outline: none;
+                    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+                    transition: border-color 0.2s, box-shadow 0.2s;
                 ">
             </div>
 
             <!-- Project Details Input -->
             <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                <label style="color: #e0e0e0; font-size: 0.9rem; font-weight: 600;">
-                    Project Scope & Requirements <span style="color: #888; font-weight: 400;">(Optional)</span>
+                <label style="color: #f4f4f5; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.02em;">
+                    Project Scope & Requirements <span style="color: #71717a; font-weight: 400;">(Optional)</span>
                 </label>
                 <textarea rows="3" placeholder="Briefly describe your space, approximate square footage, or specific needs (e.g. 2-car garage, flake finish)..." style="
                     width: 100%;
-                    padding: 0.85rem 1rem;
-                    background: rgba(255, 255, 255, 0.04);
-                    border: 1px solid rgba(255, 255, 255, 0.15);
-                    border-radius: 6px;
+                    padding: 0.9rem 1.1rem;
+                    background: rgba(15, 23, 42, 0.6);
+                    border: 1px solid rgba(255, 255, 255, 0.12);
+                    border-radius: 8px;
                     color: #ffffff;
-                    font-size: 1rem;
+                    font-size: 0.975rem;
                     outline: none;
                     resize: vertical;
+                    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+                    transition: border-color 0.2s, box-shadow 0.2s;
                 "></textarea>
             </div>
 
             <!-- Submit Button -->
             <button type="submit" class="btn btn-primary" style="
                 width: 100%;
-                padding: 1rem;
-                background-color: #0070f3;
+                padding: 1.05rem;
+                background: linear-gradient(135deg, #0070f3 0%, #0051ba 100%);
                 color: #ffffff;
                 border: none;
-                border-radius: 6px;
-                font-size: 1.05rem;
+                border-radius: 8px;
+                font-size: 1rem;
                 font-weight: 600;
+                letter-spacing: 0.03em;
                 cursor: pointer;
-                margin-top: 0.5rem;
-                transition: background-color 0.2s ease;
+                margin-top: 0.75rem;
+                box-shadow: 0 4px 14px rgba(0, 112, 243, 0.35);
+                transition: all 0.2s ease-in-out;
             ">
                 Send Quote Request &rarr;
             </button>
